@@ -1,0 +1,28 @@
+{
+  "name": "@ajx2/side-panel",
+  "version": "1.0.2",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "react",
+    "side-panel",
+    "ui"
+  ],
+  "description": "A flexible and customizable React side panel component with smooth animations and Tailwind CSS support.",
+  "scripts": {
+    "build": "tsc"
+  },
+  "peerDependencies": {
+    "react": ">=17",
+    "@tabler/icons-react": "^3.0.0",
+    "clsx": "^2.1.0",
+    "tailwind-merge": "^2.5.0"
+  }
+}
