@@ -18,7 +18,6 @@ import { FaDocker } from "react-icons/fa";
 import { DiRedis } from "react-icons/di";
 import { SiApachekafka } from "react-icons/si";
 import { SiSocketdotio } from "react-icons/si";
-import { SiCloudinary } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
 import { SiVercel } from "react-icons/si";
 import { FaCloudflare } from "react-icons/fa6";
