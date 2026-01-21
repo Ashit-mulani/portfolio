@@ -13,11 +13,10 @@ import { SiRedux } from "react-icons/si";
 import { SiShadcnui } from "react-icons/si";
 import { SiReactrouter } from "react-icons/si";
 import { SiMongodb } from "react-icons/si";
-import { SiMongoose } from "react-icons/si";
+import { SiPrisma } from "react-icons/si";
 import { FaDocker } from "react-icons/fa";
 import { DiRedis } from "react-icons/di";
 import { SiApachekafka } from "react-icons/si";
-import { SiPostman } from "react-icons/si";
 import { SiSocketdotio } from "react-icons/si";
 import { SiCloudinary } from "react-icons/si";
 import { FaGithub } from "react-icons/fa";
@@ -28,6 +27,8 @@ import { SiJsonwebtokens } from "react-icons/si";
 import { SiConsul } from "react-icons/si";
 import { BsStack } from "react-icons/bs";
 import Heading from "./Heading";
+import { SiNestjs } from "react-icons/si";
+import { BiLogoPostgresql } from "react-icons/bi";
 
 const techStack = [
   {
@@ -71,16 +72,24 @@ const techStack = [
     icon: <SiExpress size={30} />,
   },
   {
+    name: "Nestjs",
+    icon: <SiNestjs color="#EA285E" size={28} />,
+  },
+  {
     name: "JWT",
     icon: <SiJsonwebtokens color="#D639FC" size={26} />,
   },
   {
-    name: "Mongoose",
-    icon: <SiMongoose color="#B71C1C" size={32} />,
-  },
-  {
     name: "MongoDB",
     icon: <SiMongodb color="#599636" size={30} />,
+  },
+  {
+    name: "Prisma",
+    icon: <SiPrisma color="#16A394" size={26} />,
+  },
+  {
+    name: "Postgresql",
+    icon: <BiLogoPostgresql color="#336791" size={32} />,
   },
   {
     name: "Docker",
@@ -101,14 +110,6 @@ const techStack = [
   {
     name: "Socket Io",
     icon: <SiSocketdotio size={26} />,
-  },
-  {
-    name: "Postman",
-    icon: <SiPostman color="#FE6C35" size={26} />,
-  },
-  {
-    name: "Cloudinary",
-    icon: <SiCloudinary color="#0071CE" size={32} />,
   },
   {
     name: "Cloudflare",
