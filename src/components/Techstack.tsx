@@ -26,7 +26,7 @@ import { FaCloudflare } from "react-icons/fa6";
 import { CgNpm } from "react-icons/cg";
 import { SiJsonwebtokens } from "react-icons/si";
 import { SiConsul } from "react-icons/si";
-import { Button } from "./ui/button";
+import { BsStack } from "react-icons/bs";
 import Heading from "./Heading";
 
 const techStack = [
@@ -139,7 +139,7 @@ const TechStackIconWrapper = ({ icon }: { icon: React.ReactElement }) => {
 const TechStack = () => {
   return (
     <div className="flex flex-col gap-2">
-      <Heading name="Tech Stack" />
+      <Heading name="Tech Stack" icon={<BsStack />} />
       <div className="flex flex-wrap gap-2">
         {techStack.map(({ name, icon }) => (
           <Tooltip key={name}>

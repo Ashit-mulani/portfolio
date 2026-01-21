@@ -1,5 +1,10 @@
+import { usePageTitle } from "@/lib/hooks/usePageTitle";
+import { Outlet } from "react-router-dom";
+
 const Component = () => {
-  return <div>Components</div>;
+  usePageTitle("Components-Packages | Ashit Mulani");
+
+  return <Outlet />;
 };
 
 export default Component;

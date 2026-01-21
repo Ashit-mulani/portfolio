@@ -5,31 +5,28 @@ import {
   AvatarImage as Image,
 } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetTrigger,
-  SheetContent,
-  SheetHeader,
-  SheetClose,
-} from "@/components/ui/sheet";
 import { useMoveToTop } from "@/lib/hooks/useMoveToTop";
 import { useSize } from "@/lib/hooks/useSize";
 import { cn } from "@/lib/utils";
-import type { MenuItem } from "@/types";
-import {
-  IconArticle,
-  IconBrandGithub,
-  IconFolders,
-  IconHome,
-  IconMenu2,
-  IconPuzzle,
-} from "@tabler/icons-react";
+import type { MenuItems } from "@/types";
+import { IconBrandGithub } from "@tabler/icons-react";
 import { Link, useLocation } from "react-router-dom";
+import {
+  Menu,
+  MenuContent,
+  MenuItem,
+  MenuItemGroup,
+  MenuItemGroupTitle,
+  MenuSvg,
+  MenuTriggerButton,
+} from "@ajx2/menu";
+import { blogsLinks, componentsLinks, projectsLinks } from "@/lib/data/Links";
+import { useTruncate } from "@/lib/hooks/useTruncate";
 
 const Topnavbar = () => {
   const location = useLocation();
 
-  const isHome = location.pathname == "/";
+  const isHome = location.pathname === "/";
 
   const isMobile = useSize(500);
 
@@ -88,7 +85,7 @@ const AvatarImage = ({
   );
 };
 
-const menu: MenuItem[] = [
+const menu: MenuItems[] = [
   {
     name: "Portfolio",
     path: "/",
@@ -107,6 +104,13 @@ const menu: MenuItem[] = [
   },
 ];
 
+function isMenuActive(menuPath: string, locationPath: string) {
+  if (menuPath === "/") {
+    return locationPath === "/";
+  }
+  return locationPath === menuPath || locationPath.startsWith(menuPath + "/");
+}
+
 const TopNavbarMenu = () => {
   const location = useLocation();
 
@@ -115,7 +119,10 @@ const TopNavbarMenu = () => {
       {menu.map((m) => (
         <Link to={m.path} key={m.path || m.name}>
           <Button
-            variant={location.pathname === m.path ? "default" : "outline"}
+            onClick={useMoveToTop}
+            variant={
+              isMenuActive(m.path, location.pathname) ? "default" : "ghost"
+            }
           >
             {m.name}
           </Button>
@@ -126,58 +133,53 @@ const TopNavbarMenu = () => {
 };
 
 const TopNavbarMenuOnMobile = () => {
-  const location = useLocation();
-
   return (
-    <Sheet>
-      <SheetTrigger asChild>
+    <Menu>
+      <MenuTriggerButton className="border-none p-0">
         <Button variant="outline">
-          <IconMenu2 />
+          <MenuSvg />
         </Button>
-      </SheetTrigger>
-      <SheetContent side="left" className="w-56 p-0">
-        <SheetHeader className="mb-2 p-4">
-          <span className="text-base font-semibold">Menu</span>
-        </SheetHeader>
-        <div className="flex flex-col gap-1 p-2">
-          {menu.map((m) => {
-            let IconComp = null;
-            switch (m.name) {
-              case "Portfolio":
-                IconComp = <IconHome className="mr-2" />;
-                break;
-              case "Components":
-                IconComp = <IconPuzzle className="mr-2" />;
-                break;
-              case "Projects":
-                IconComp = <IconFolders className="mr-2" />;
-                break;
-              case "Blogs":
-                IconComp = <IconArticle className="mr-2" />;
-                break;
-              default:
-                IconComp = null;
-            }
-            return (
-              <SheetClose asChild key={m.path || m.name}>
-                <Link to={m.path}>
-                  <Button
-                    onClick={useMoveToTop}
-                    variant={location.pathname === m.path ? "default" : "ghost"}
-                    className={`w-full justify-start`}
-                    asChild
-                  >
-                    <span className="flex items-center">
-                      {IconComp}
-                      {m.name}
-                    </span>
-                  </Button>
-                </Link>
-              </SheetClose>
-            );
-          })}
-        </div>
-      </SheetContent>
-    </Sheet>
+      </MenuTriggerButton>
+      <MenuContent className="mt-14 border border-dashed">
+        <MenuItemGroup>
+          <MenuItemGroupTitle title="Menu" />
+          {menu.map((m) => (
+            <Link to={m.path} onClick={useMoveToTop} key={m.path || m.name}>
+              <MenuItem className="dark:hover:text-primary">{m.name}</MenuItem>
+            </Link>
+          ))}
+        </MenuItemGroup>
+        <MenuItemGroup>
+          <MenuItemGroupTitle title="Projects" />
+          {projectsLinks.map((m) => (
+            <Link to={m?.to || "/"} onClick={useMoveToTop} key={m?.to}>
+              <MenuItem className="dark:hover:text-primary">
+                {m?.label}
+              </MenuItem>
+            </Link>
+          ))}
+        </MenuItemGroup>
+        <MenuItemGroup>
+          <MenuItemGroupTitle title="Components" />
+          {componentsLinks.map((m) => (
+            <Link to={m?.to || "/"} onClick={useMoveToTop} key={m?.to}>
+              <MenuItem className="dark:hover:text-primary">
+                {m?.label}
+              </MenuItem>
+            </Link>
+          ))}
+        </MenuItemGroup>
+        <MenuItemGroup>
+          <MenuItemGroupTitle title="Blogs" />
+          {blogsLinks.map((m) => (
+            <Link to={m?.to || "/"} onClick={useMoveToTop} key={m?.to}>
+              <MenuItem className="dark:hover:text-primary">
+                {useTruncate(m?.label)}
+              </MenuItem>
+            </Link>
+          ))}
+        </MenuItemGroup>
+      </MenuContent>
+    </Menu>
   );
 };

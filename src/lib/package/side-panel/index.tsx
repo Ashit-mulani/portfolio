@@ -20,10 +20,10 @@ type SidePanelContextType = {
 const SidePanelContext = createContext<SidePanelContextType | null>(null);
 
 const useSidePanel = () => {
-  const ctx = useContext(SidePanelContext);
-  if (!ctx)
+  const context = useContext(SidePanelContext);
+  if (!context)
     throw new Error("SidePanel components must be inside <SidePanel />");
-  return ctx;
+  return context;
 };
 
 const SidePanel = ({

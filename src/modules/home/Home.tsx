@@ -1,11 +1,19 @@
-import TechStack from "@/components/Teckstack";
+import TechStack from "@/components/Techstack";
 import { StripedPattern } from "@/components/ui/striped-pattern";
 import Contact from "@/components/Contact";
-import Projects from "@/components/ProjectCard";
-import { IconMapPin } from "@tabler/icons-react";
+import { IconArrowForwardUpDouble, IconMapPin } from "@tabler/icons-react";
 import { Button } from "@/components/ui/button";
+import Typography from "@/components/Typography";
+import ProjectCard from "@/components/ProjectCard";
+import { usePageTitle } from "@/lib/hooks/usePageTitle";
+import Heading from "@/components/Heading";
+import { AiFillHighlight } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import { useMoveToTop } from "@/lib/hooks/useMoveToTop";
 
 const Home = () => {
+  usePageTitle("Ashit Mulani | Portfolio");
+
   return (
     <>
       <StripedPattern className="-z-20 [mask-image:radial-gradient(300px_circle_at_top,white,transparent)] opacity-40" />
@@ -37,20 +45,41 @@ const Home = () => {
           </div>
         </div>
         <Contact />
-        <p className="text-muted-foreground text-sm tracking-tight">
-          Full-Stack Web Developer skilled in both frontend and backend
-          development, with strong knowledge of React.js, Next.js, Node.js,
-          Express.js, Docker, Kafka, Redis, and related tools. I have built
-          advanced, production-level projects on my own, including scalable
-          systems. I also have solid understanding of system design, performance
-          optimization, and building reliable, high-quality applications
-          end-to-end.
-        </p>
+        <Typography
+          description=" Full-Stack Web Developer skilled in both frontend and backend
+        development, with strong knowledge of React.js, Next.js, Node.js,
+        Express.js, Docker, Kafka, Redis, and related tools. I have built
+        advanced, production-level projects on my own, including scalable
+        systems. I also have solid understanding of system design, performance
+        optimization, and building reliable, high-quality applications
+        end-to-end."
+        />
         <section>
           <TechStack />
         </section>
-        <section>
-          <Projects />
+        <section className="flex flex-col gap-2">
+          <Heading name="Work Highlights" icon={<AiFillHighlight />} />
+          <ProjectCard slice={true} />
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <Link to="/projects">
+              <Button
+                variant="outline"
+                className="text-secondary-foreground dark:text-primary"
+                onClick={useMoveToTop}
+              >
+                All Projects <IconArrowForwardUpDouble />
+              </Button>
+            </Link>
+            <Link to="/components">
+              <Button
+                variant="outline"
+                className="text-secondary-foreground dark:text-primary"
+                onClick={useMoveToTop}
+              >
+                Components <IconArrowForwardUpDouble />
+              </Button>
+            </Link>
+          </div>
         </section>
       </div>
     </>

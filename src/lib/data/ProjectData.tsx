@@ -12,13 +12,7 @@ export const projectsData: ProjectItem[] = [
     type: "Project",
     title: "Cloud-based Photo management",
     coverImage: "/project/imagebox/cover.png",
-    gallery: [
-      "/project/imagebox/gallery/dark-mode-view.png",
-      "/project/imagebox/gallery/full-image-view.png",
-      "/project/imagebox/gallery/image-control-view.png",
-      "/project/imagebox/gallery/image-layout-view.png",
-      "/project/imagebox/gallery/mobile-view.png",
-    ],
+    gallery: ["/project/imagebox/gallery/dark-mode-view.png"],
     description:
       "A cloud-based photo management app that lets users easily upload, organize, and share images online.",
     problem:
@@ -33,7 +27,7 @@ export const projectsData: ProjectItem[] = [
       {
         name: "More Information",
         icon: <IconFileText />,
-        url: "/project/imagebox",
+        url: "/projects/imagebox",
       },
       {
         name: "Github Repository",
@@ -41,9 +35,9 @@ export const projectsData: ProjectItem[] = [
         url: "https://github.com/Ashit-mulani/imagebox",
       },
       {
-        name: "Live View",
+        name: "Live Preview",
         icon: <IconExternalLink />,
-        url: "https://imagebox-six.vercel.app/user/home",
+        url: "https://imagebox.fluoce.com/user/home",
       },
     ],
     year: 2025,
@@ -53,14 +47,6 @@ export const projectsData: ProjectItem[] = [
     name: "SidePanel",
     type: "Package",
     title: "package for Side Panel component",
-    coverImage: "/project/imagebox/cover.png",
-    gallery: [
-      "/project/imagebox/gallery/dark-mode-view.png",
-      "/project/imagebox/gallery/full-image-view.png",
-      "/project/imagebox/gallery/image-control-view.png",
-      "/project/imagebox/gallery/image-layout-view.png",
-      "/project/imagebox/gallery/mobile-view.png",
-    ],
     description:
       "A flexible side panel component for React, It provides a smooth slide-in panel with customizable triggers, left/right positioning, and a clean compound-component API, published as a public npm package.",
     problem:
@@ -69,17 +55,12 @@ export const projectsData: ProjectItem[] = [
       "Designed and built a lightweight, headless-friendly side panel component inspired by Gmail's UI. The package offers flexible positioning, animated transitions, customizable triggers, and full TypeScript support, making it easy to integrate into any React + Tailwind project.",
     techStack: ["NPM", "React", "Tailwind CSS", "clsx", "tailwind-merge"],
     role: "Package Author & Maintainer",
-    status: "Open-source",
+    status: "Npm-Package",
     links: [
       {
         name: "More Information",
         icon: <IconFileText />,
-        url: "/project/imagebox",
-      },
-      {
-        name: "Github Repository",
-        icon: <IconBrandGithub />,
-        url: "https://github.com/Ashit-mulani/imagebox",
+        url: "/components/side-panel",
       },
       {
         name: "NPM Package",
@@ -88,6 +69,7 @@ export const projectsData: ProjectItem[] = [
       },
     ],
     year: 2025,
+    command: "npm i @ajx2/side-panel",
   },
   {
     id: "goldphin",
@@ -95,13 +77,7 @@ export const projectsData: ProjectItem[] = [
     type: "Project",
     title: "Dashboard for Crypto Wallets",
     coverImage: "/project/goldphin/cover.png",
-    gallery: [
-      "/project/goldphin/gallery/dashboard.png",
-      "/project/goldphin/gallery/token-grid-view.png",
-      "/project/goldphin/gallery/token-swap.png",
-      "/project/goldphin/gallery/token-view.png",
-      "/project/goldphin/gallery/tx-history.png",
-    ],
+    gallery: ["/project/goldphin/gallery/dark-mode-view.png"],
     description:
       "Connect your crypto wallet and view all your wallet stats in one place. Includes a built-in token swap service that lets you seamlessly exchange tokens across multiple blockchains.",
     problem:
@@ -116,7 +92,7 @@ export const projectsData: ProjectItem[] = [
       {
         name: "More Information",
         icon: <IconFileText />,
-        url: "/project/goldphin",
+        url: "/projects/goldphin",
       },
       {
         name: "Github Repository",
@@ -124,9 +100,9 @@ export const projectsData: ProjectItem[] = [
         url: "https://github.com/Ashit-mulani/GoldPhin.io",
       },
       {
-        name: "Live View",
+        name: "Live Preview",
         icon: <IconExternalLink />,
-        url: "https://goldphin.vercel.app",
+        url: "https://goldphin.fluoce.com",
       },
     ],
     year: 2025,
@@ -136,14 +112,8 @@ export const projectsData: ProjectItem[] = [
     name: "Fluoce",
     type: "Project",
     title: "Store, Share and Access your files anytime, anywhere",
-    coverImage: "/project/imagebox/cover.png",
-    gallery: [
-      "/project/imagebox/gallery/dark-mode-view.png",
-      "/project/imagebox/gallery/full-image-view.png",
-      "/project/imagebox/gallery/image-control-view.png",
-      "/project/imagebox/gallery/image-layout-view.png",
-      "/project/imagebox/gallery/mobile-view.png",
-    ],
+    coverImage: "/project/fluoce/cover.png",
+    gallery: ["/project/fluoce/gallery/dark-mode-view.png"],
     description:
       "Cloud storage platform. Designed to provide reliable file availability, seamless organization, and secure access across all your devices with secure file sharing.",
     problem:
@@ -165,7 +135,7 @@ export const projectsData: ProjectItem[] = [
       {
         name: "More Information",
         icon: <IconFileText />,
-        url: "/project/fluoce",
+        url: "/projects/fluoce",
       },
       {
         name: "Github Repository",
@@ -180,20 +150,12 @@ export const projectsData: ProjectItem[] = [
     name: "Leaflet-Live",
     type: "Project",
     title: "Real-Time Location Sharing with Groups",
-    coverImage: "/project/imagebox/cover.png",
-    gallery: [
-      "/project/imagebox/gallery/dark-mode-view.png",
-      "/project/imagebox/gallery/full-image-view.png",
-      "/project/imagebox/gallery/image-control-view.png",
-      "/project/imagebox/gallery/image-layout-view.png",
-      "/project/imagebox/gallery/mobile-view.png",
-    ],
     description:
-      "A cloud-based photo management app that lets users easily upload, organize, and share images online.",
+      "A room-based real-time location sharing platform allowing users to join public or private rooms and share their live location with others on an interactive map.",
     problem:
-      "Sharing live locations within a group is often fragmented across messaging apps and map services, making it difficult to track multiple users in real time within a single, shared view.",
+      "Coordinating live locations within groups is challenging when existing apps scatter location updates across individual chats or require repeated manual sharing, especially when multiple people need to track or be seen together. Current solutions lack centralized, dedicated spaces for group-based real-time tracking and collaboration.",
     solution:
-      "Built a room-based location sharing platform where users can join private or public groups and share their live location on a real-time interactive map using Leaflet. The application centralizes group location data, enabling easy tracking and coordination within shared rooms.",
+      "Developed a web application that enables users to create or join both public and private rooms where all participants live locations are shown in real time using Leaflet maps. This approach creates a centralized space for group tracking, simplifies coordination, and enhances privacy for closed groups.",
     techStack: ["NextJs", "Socket Io", "LeafletJs", "Redis", "Geolocation API"],
     role: "Full-Stack Developer",
     architecture: "Monolith",
@@ -202,7 +164,7 @@ export const projectsData: ProjectItem[] = [
       {
         name: "More Information",
         icon: <IconFileText />,
-        url: "/project/leaflet-live",
+        url: "/projects/leaflet-live",
       },
       {
         name: "Github Repository",
@@ -211,5 +173,34 @@ export const projectsData: ProjectItem[] = [
       },
     ],
     year: 2024,
+  },
+  {
+    id: "menu",
+    name: "Menu",
+    type: "Package",
+    title: "Mobile first menu component",
+    description:
+      "A fully-responsive, headless menu component for React and Tailwind CSS. Provides a modern, mobile-first navigation experience with seamless animations, accessibility, and flexible alignment—ideal for building polished navigation UIs quickly.",
+    problem:
+      "Creating a mobile-friendly navigation menu looks easy, but developers face many frustrating challenges. Common problems include menus not sizing correctly on different devices, broken scrolling, content that gets clipped or hidden, touch areas that are too small or unresponsive, and unpredictable behavior in browsers. These issues make it difficult to provide a smooth and reliable menu experience for users on all devices.",
+    solution:
+      "Created a lightweight, context-driven menu system that handles mobile responsiveness correctly by using dynamic viewport units, isolated scroll containers, and controlled mount animations. The component ensures consistent behavior across devices while providing a clean API and smooth user experience.",
+    techStack: ["NPM", "React", "Tailwind CSS", "clsx", "tailwind-merge"],
+    role: "Package Author & Maintainer",
+    status: "Npm-Package",
+    links: [
+      {
+        name: "More Information",
+        icon: <IconFileText />,
+        url: "/components/menu",
+      },
+      {
+        name: "NPM Package",
+        icon: <IconExternalLink />,
+        url: "https://www.npmjs.com/package/@ajx2/menu",
+      },
+    ],
+    year: 2025,
+    command: "npm i @ajx2/menu",
   },
 ];
