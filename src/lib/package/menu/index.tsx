@@ -1,13 +1,13 @@
 import {
-  Children,
-  ReactNode,
   createContext,
   useContext,
   useState,
   useRef,
   useEffect,
 } from "react";
-import { ClassValue, clsx } from "clsx";
+import type { ReactNode } from "react"
+import { clsx } from "clsx";
+import type { ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge";
 
 type MenuType = {
@@ -92,10 +92,8 @@ const MenuSvg = ({
 };
 
 const MenuTriggerButton = ({
-  className,
   children,
 }: {
-  className?: string;
   children?: ReactNode;
 }) => {
   const { toggle } = useMenu();
