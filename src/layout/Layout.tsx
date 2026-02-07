@@ -5,13 +5,13 @@ import { Toaster } from "@/components/ui/sonner";
 import Home from "@/modules/home/Home";
 import ProjectDetail from "@/components/mod/project/ProjectDetail";
 import ComponentDetail from "@/components/mod/components/ComponentDetail";
-import BlogDetail from "@/components/mod/blog/BlogDetail";
 import ComponentPage from "@/components/mod/components/ComponentPage";
 import ProjectPage from "@/components/mod/project/ProjectPage";
 import BlogPage from "@/components/mod/blog/BlogPage";
 import Project from "@/modules/project/Project";
 import Component from "@/modules/components/Component";
-import Blog from "@/modules/blog/Blog";
+// import Blog from "@/modules/blog/Blog";
+// import BlogDetail from "@/components/mod/blog/BlogDetail";
 
 const Layout = () => {
   return (
@@ -31,10 +31,11 @@ const Layout = () => {
               <Route index element={<ProjectPage />} />
               <Route path=":projectId" element={<ProjectDetail />} />
             </Route>
-            <Route path="/blogs/*" element={<Blog />}>
+            <Route path="/blogs" element={<BlogPage />} />
+            {/* <Route path="/blogs/*" element={<Blog />}>
               <Route index element={<BlogPage />} />
               <Route path=":blogId" element={<BlogDetail />} />
-            </Route>
+            </Route> */}
           </Routes>
         </div>
         <footer className="w-full max-w-180 border-x border-dashed pt-4">

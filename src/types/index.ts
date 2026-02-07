@@ -19,14 +19,14 @@ export type ProjectItem = {
   solution?: string;
   role?: string;
   status?:
-    | "In-Production"
-    | "In-Beta"
-    | "In-development"
-    | "Npm-Package"
-    | "Component"
-    | "Prototype"
-    | "Experimental"
-    | "Archived";
+  | "In-Production"
+  | "In-Beta"
+  | "In-development"
+  | "Npm-Package"
+  | "Component"
+  | "Prototype"
+  | "Experimental"
+  | "Archived";
   links?: {
     name: string;
     icon: ReactElement;
@@ -34,6 +34,7 @@ export type ProjectItem = {
   }[];
   year?: number;
   command?: string;
+  [key: string]: any;
 };
 
 export type BlogItem = {
@@ -59,3 +60,7 @@ export type DelayedSpinnerProps = {
   delay?: number;
   children: React.ReactNode;
 };
+
+export type ComponentItem = {
+
+}

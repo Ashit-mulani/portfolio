@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import type { ProjectItem } from "@/types";
 import { statusColor } from "./ProjectCard";
 import { cn } from "@/lib/utils";
+import { CodeBlock } from "@/components/ui/code-block"
 
 const DetailInfoPage = ({ project }: { project: ProjectItem }) => {
   const isDark = useIsDarkTheme();
@@ -49,6 +50,23 @@ const DetailInfoPage = ({ project }: { project: ProjectItem }) => {
           </section>
         )}
       </header>
+      {project?.code && (
+        <section className="flex flex-col gap-2">
+          <div>
+            <h2>{project?.codeTitle}</h2>
+            <Typography
+              className="text-xs"
+              description={project?.codeDescription}
+            />
+          </div>
+          <CodeBlock
+            language="tsx"
+            filename="TopNavbarMenuOnMobile.tsx"
+            code={project.code}
+            highlightLines={[15, 22, 31, 42, 53]}
+          />
+        </section>
+      )}
       <section className="flex flex-col gap-2">
         <div>
           <span className="text-xs">Description</span>

@@ -38,7 +38,7 @@ const Topnavbar = () => {
         ) : (
           <AvatarImage
             className="hover:border-primary"
-            src="/me_yellow.png"
+            src="/Avatar.jpg"
             fallBack="AJ"
           />
         )}

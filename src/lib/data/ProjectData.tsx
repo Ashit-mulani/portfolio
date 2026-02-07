@@ -70,6 +70,36 @@ export const projectsData: ProjectItem[] = [
     ],
     year: 2025,
     command: "npm i @ajx2/side-panel",
+    codeTitle: 'Usage Example in Production App',
+    codeDescription: 'The SidePanel package offers a highly flexible, zero-dependency slide-in side panel for React apps. It is ideal for settings, navigation, or contextual content on any page, supporting customizable triggers, left/right positioning, and easy integration with Tailwind CSS.',
+    code: `import {
+     SidePanel,
+     SidePanelTrigger,
+     SidePanelContent,
+     SidePanelSeparator,
+     useSidePanel
+} from "@ajx2/side-panel" 
+
+
+const SidepanelDemo = () => {
+  
+  const { open, position, toggle } = useSidePanel()
+
+  return (
+       <SidePanel>
+         <SidePanelTrigger align="center" />
+         <SidePanelContent className="p-4">
+           <h3 className="font-semibold text-lg mb-2">Panel content</h3>
+           <SidePanelSeparator />
+           <p>This SidePanel can be used for settings, navigation, etc.</p>
+         </SidePanelContent>
+       </SidePanel>
+  )
+}
+
+export default SidepanelDemo;
+
+  `
   },
   {
     id: "goldphin",
@@ -202,5 +232,74 @@ export const projectsData: ProjectItem[] = [
     ],
     year: 2025,
     command: "npm i @ajx2/menu",
+    codeTitle: 'Usage Example in Production App',
+    codeDescription: 'This menu component is integrated into my own portfolio site as the main mobile navigation. It powers the dropdown menu for easy, responsive navigation, including groups for main sections, projects, components, and blogs, providing a seamless experience that works perfectly across devices.',
+    code: `import {
+  Menu,
+  MenuContent,
+  MenuItem,
+  MenuItemGroup,
+  MenuItemGroupTitle,
+  MenuSvg,
+  MenuTriggerButton,
+} from "@ajx2/menu";
+
+const TopNavbarMenuOnMobile = () => {
+  return (
+    <Menu>
+      <MenuTriggerButton className="border-none p-0">
+       {/* You can customize the trigger button or icon below as desired */}
+        <Button variant="outline">
+          <MenuSvg />
+        </Button>
+      </MenuTriggerButton>
+      <MenuContent className="mt-14 border border-dashed">
+        <MenuItemGroup>
+          {/* navigation group - replace or customize menu items as needed */}
+          <MenuItemGroupTitle title="Menu" />
+          {menu.map((m) => (
+            <Link to={m.path} onClick={useMoveToTop} key={m.path || m.name}>
+              <MenuItem className="dark:hover:text-primary">{m.name}</MenuItem>
+            </Link>
+          ))}
+        </MenuItemGroup>
+        <MenuItemGroup>
+         {/* navigation group - replace or customize menu items as needed */}
+          <MenuItemGroupTitle title="Projects" />
+          {projectsLinks.map((m) => (
+            <Link to={m?.to || "/"} onClick={useMoveToTop} key={m?.to}>
+              <MenuItem className="dark:hover:text-primary">
+                {m?.label}
+              </MenuItem>
+            </Link>
+          ))}
+        </MenuItemGroup>
+        <MenuItemGroup>
+         {/* navigation group - replace or customize menu items as needed */}
+          <MenuItemGroupTitle title="Components" />
+          {componentsLinks.map((m) => (
+            <Link to={m?.to || "/"} onClick={useMoveToTop} key={m?.to}>
+              <MenuItem className="dark:hover:text-primary">
+                {m?.label}
+              </MenuItem>
+            </Link>
+          ))}
+        </MenuItemGroup>
+        <MenuItemGroup>
+         {/* navigation group - replace or customize menu items as needed */}
+          <MenuItemGroupTitle title="Blogs" />
+          {blogsLinks.map((m) => (
+            <Link to={m?.to || "/"} onClick={useMoveToTop} key={m?.to}>
+              <MenuItem className="dark:hover:text-primary">
+                {useTruncate(m?.label)}
+              </MenuItem>
+            </Link>
+          ))}
+        </MenuItemGroup>
+      </MenuContent>
+    </Menu>
+  );
+};
+`
   },
 ];

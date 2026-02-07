@@ -19,7 +19,7 @@ const Home = () => {
       <StripedPattern className="-z-20 [mask-image:radial-gradient(300px_circle_at_top,white,transparent)] opacity-40" />
       <div className="flex w-full flex-col gap-4">
         <div className="flex w-full items-start gap-4">
-          <img src="/me_yellow.png" alt="" className="h-20 w-20" />
+          <img src="/Avatar.jpg" alt="" className="h-20 w-20" />
           <div className="flex w-full flex-col">
             <div>
               <h1>Ashit Mulani</h1>

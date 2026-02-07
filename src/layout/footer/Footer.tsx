@@ -76,7 +76,7 @@ const Footer = () => {
             </div>
           )}
         </div>
-        {blogsLinks?.length > 0 && (
+        {/* {blogsLinks?.length > 0 && (
           <div className="flex flex-col items-start gap-2">
             <span className="px-2.5">Blogs</span>
             <div className="flex flex-col items-start">
@@ -93,7 +93,7 @@ const Footer = () => {
               ))}
             </div>
           </div>
-        )}
+        )} */}
       </div>
       <div className="flex items-end justify-between gap-2">
         <div>
