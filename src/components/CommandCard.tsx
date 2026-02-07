@@ -3,7 +3,13 @@ import { Button } from "./ui/button";
 import { useCopy } from "@/lib/hooks/useCopy";
 import { IconCopy } from "@tabler/icons-react";
 
-const CommandCard = ({ command }: { command: string }) => {
+const CommandCard = ({ command }: { command?: string }) => {
+
+  if (!command) {
+    return null
+  }
+
+
   return (
     <div className="flex items-center justify-between border border-dashed p-2">
       <div className="flex items-center gap-3">

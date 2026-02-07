@@ -8,6 +8,7 @@ import type { ProjectItem } from "@/types";
 import { statusColor } from "./ProjectCard";
 import { cn } from "@/lib/utils";
 import { CodeBlock } from "@/components/ui/code-block"
+import CommandCard from "./CommandCard";
 
 const DetailInfoPage = ({ project }: { project: ProjectItem }) => {
   const isDark = useIsDarkTheme();
@@ -67,6 +68,9 @@ const DetailInfoPage = ({ project }: { project: ProjectItem }) => {
           />
         </section>
       )}
+      <section>
+        <CommandCard command={project?.command} />
+      </section>
       <section className="flex flex-col gap-2">
         <div>
           <span className="text-xs">Description</span>
