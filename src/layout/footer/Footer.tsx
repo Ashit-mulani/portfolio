@@ -10,7 +10,7 @@ import Contact from "../../components/Contact";
 import { useMoveToTop } from "@/lib/hooks/useMoveToTop";
 import { useTruncate } from "@/lib/hooks/useTruncate";
 import {
-  blogsLinks,
+  // blogsLinks,
   componentsLinks,
   navLinks,
   projectsLinks,
