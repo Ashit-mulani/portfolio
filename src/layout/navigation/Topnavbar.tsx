@@ -21,7 +21,6 @@ import {
   MenuTriggerButton,
 } from "@ajx2/menu";
 import { componentsLinks, projectsLinks } from "@/lib/data/Links";
-import { useTruncate } from "@/lib/hooks/useTruncate";
 
 const Topnavbar = () => {
   const location = useLocation();
