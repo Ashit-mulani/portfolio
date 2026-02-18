@@ -4,7 +4,7 @@ import { PiMediumLogoFill } from "react-icons/pi";
 export const BlogData: BlogItem[] = [
   {
     id: "architectural-deep-dive",
-    name: "Architectural Deep Dive okiug ihgc oiiuhg oiuhg ioujg ",
+    name: "Architectural Deep Dive",
     path: "/blogs/architectural-deep-dive",
     title:
       "Mitigating Eventual Consistency Lag in Event-Driven E-commerce Systems",
