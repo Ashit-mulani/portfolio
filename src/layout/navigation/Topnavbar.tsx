@@ -20,8 +20,7 @@ import {
   MenuSvg,
   MenuTriggerButton,
 } from "@ajx2/menu";
-import { blogsLinks, componentsLinks, projectsLinks } from "@/lib/data/Links";
-import { useTruncate } from "@/lib/hooks/useTruncate";
+import { componentsLinks, projectsLinks } from "@/lib/data/Links";
 
 const Topnavbar = () => {
   const location = useLocation();
@@ -165,16 +164,6 @@ const TopNavbarMenuOnMobile = () => {
             <Link to={m?.to || "/"} onClick={useMoveToTop} key={m?.to}>
               <MenuItem className="dark:hover:text-primary">
                 {m?.label}
-              </MenuItem>
-            </Link>
-          ))}
-        </MenuItemGroup>
-        <MenuItemGroup>
-          <MenuItemGroupTitle title="Blogs" />
-          {blogsLinks.map((m) => (
-            <Link to={m?.to || "/"} onClick={useMoveToTop} key={m?.to}>
-              <MenuItem className="dark:hover:text-primary">
-                {useTruncate(m?.label)}
               </MenuItem>
             </Link>
           ))}
